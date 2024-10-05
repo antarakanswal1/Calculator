@@ -1,134 +1,48 @@
-var ext="",n1,n2,rs,op;
-        function num1()
-        {
-            document.getElementById("usernum").value=ext+="1";
-        }
+    var ext="",num1,num2,op,opt;
+    var data=document.getElementById("out");
+    
+    function num(x)
+    {
+        data.value=ext+=x;
+    }
 
-        function num2()
-        {
-            document.getElementById("usernum").value=ext+="2";
-        }
 
-        function num3()
-        {
-            document.getElementById("usernum").value=ext+="3";
-        }
-
-        function num4()
-        {
-            document.getElementById("usernum").value=ext+="4";
-        }
-
-        function num5()
-        {
-            document.getElementById("usernum").value=ext+="5";
-        }
-
-        function num6()
-        {
-            document.getElementById("usernum").value=ext+="6";
-        }
-
-        function num7()
-        {
-            document.getElementById("usernum").value=ext+="7";
-        }
-
-        function num8()
-        {
-            document.getElementById("usernum").value=ext+="8";
-        }
-
-        function num9()
-        {
-            document.getElementById("usernum").value=ext+="9";
-        }
-
-        function num0()
-        {
-            document.getElementById("usernum").value=ext+="0";
-        }
-
-        function dot()
-        {
-            document.getElementById("usernum").value=ext+=".";
-        }
-
-        function plus(){
-        n1=document.getElementById("usernum").value;
-        document.getElementById("usernum").value="";
+    function oper(op)
+    {
+        num1=parseFloat(data.value);
+        data.value="";
         ext="";
-        op="+";
-        }
+        opt=op;
+    }
 
-        function minus(){
-        n1=document.getElementById("usernum").value;
-        document.getElementById("usernum").value="";
-        ext="";
-        op="-";
-        }
+    function result()
+       {
+        num2=parseFloat(data.value);
+            switch(opt)
+            {   
+                case "+":
+                data.value=num1+num2;
+                break;
 
-        function multi(){
-        n1=document.getElementById("usernum").value;
-        document.getElementById("usernum").value="";
-        ext="";
-        op="*";
-        }
+                case "-":
+                data.value=num1-num2;
+                break;
 
-        function divide(){
-        n1=document.getElementById("usernum").value;
-        document.getElementById("usernum").value="";
-        ext="";
-        op="/";
-        }
+                case "/":
+                data.value=num1/num2;
+                break;
 
-        function dot(){
-        n1=document.getElementById("usernum").value;
-        document.getElementById("usernum").value="";
-        ext="";
-        op=".";
-        }
+                case "*":
+                data.value=num1*num2;
+                break;
+            }
+        }
 
-        function equal()
+    function clean()
         {
-            if(op=="+")
-            {
-                n2=document.getElementById("usernum").value;
-                rs=parseInt(n1)+parseInt(n2);
-                document.getElementById("usernum").value=rs;
-                ext="";
-            }
-
-            else if(op=="-")
-            {
-                n2=document.getElementById("usernum").value;
-                rs=parseInt(n1)-parseInt(n2);
-                document.getElementById("usernum").value=rs;
-                ext="";
-            }
-
-            else if(op=="*")
-            {
-                n2=document.getElementById("usernum").value;
-                rs=parseInt(n1)*parseInt(n2);
-                document.getElementById("usernum").value=rs;
-                ext="";
-            }
-
-            else if(op=="/")
-            {
-                n2=document.getElementById("usernum").value;
-                rs=parseInt(n1)/parseInt(n2);
-                document.getElementById("usernum").value=rs;
-                ext="";
-            }
-            else if(op==".")
-            {
-                n2=document.getElementById("usernum").value;
-                rs=parseInt(n1).parseInt(n2);
-                document.getElementById("usernum").value=rs;
-                ext="";
-            }
-            document.getElementById("res").innerHTML=(n1+ " "+ op+ " "+n2);
+            ext="";
+            opt="";
+            num1="";
+            num2="";
+            data.value="";
         }
-

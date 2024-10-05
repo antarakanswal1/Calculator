@@ -1,37 +1,71 @@
-.calculator{
-    margin-top: 20px;
-    border: 2.5px solid black;
-    height: 600px;
-    width: 500px;
-    margin-left: 80px;
-    background-color:#DFE8ED;
-    padding: 20px;
-    border: 1px solid black;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #f4f4f4; */
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='700' preserveAspectRatio='none' viewBox='0 0 1440 700'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1003%26quot%3b)' fill='none'%3e%3cpath d='M858.958%2c382.829C890.685%2c383.389%2c921.974%2c371.171%2c939.045%2c344.422C957.452%2c315.578%2c962.162%2c278.103%2c944.491%2c248.802C927.284%2c220.27%2c892.261%2c210.608%2c858.958%2c211.63C827.642%2c212.591%2c797.761%2c226.674%2c782.056%2c253.785C766.313%2c280.961%2c767.543%2c314.7%2c783.621%2c341.68C799.321%2c368.025%2c828.295%2c382.288%2c858.958%2c382.829' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M172.92437870652813 594.8887168655424L58.63084724848676 615.0417501820468 146.00716295226405 776.4055307108566z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M379.2177067590648 582.2045771996548L468.0197353926972 522.3068525733846 333.77213413647576 419.05267193607114z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M567.4998121129017 107.42026681322699L690.5242131537528 129.23369851775828 654.9656275049674 25.96406728178806z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M644.2057824737293 174.94861028431325L820.0156078771904 246.17536662611874 799.8073542972894 81.5923487670471z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1195.6630763714293 236.68090631839326L1313.779697337078 48.05505038605048 1119.4972230543049 37.873137355275844z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-3.49263746930896 126.59820252958187L202.20320378445848 47.86380295807933 54.71453188152226-75.89388723850132z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M936.1491399204194 356.347453599856L900.6918594774191 131.0897967275657 743.6136275272256 253.8127615873401z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M145.097%2c536.428C176.595%2c535.787%2c208.02%2c526.541%2c225.574%2c500.38C245.309%2c470.969%2c253.503%2c432.223%2c235.474%2c401.736C217.683%2c371.652%2c180.007%2c362.608%2c145.097%2c364.291C113.352%2c365.821%2c85.378%2c382.757%2c68.648%2c409.779C50.872%2c438.49%2c41.283%2c474.867%2c58.734%2c503.777C75.78%2c532.017%2c112.118%2c537.1%2c145.097%2c536.428' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M655.396%2c940.933C733.867%2c944.893%2c803.224%2c890.761%2c839.929%2c821.291C874.345%2c756.154%2c868.08%2c676.861%2c827.358%2c615.469C790.513%2c559.922%2c722.008%2c545.515%2c655.396%2c543.091C582.622%2c540.442%2c497.449%2c539.478%2c460.296%2c602.11C422.744%2c665.414%2c463.799%2c740.38%2c500.528%2c804.165C537.363%2c868.134%2c581.674%2c937.213%2c655.396%2c940.933' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1003'%3e%3crect width='1440' height='700' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e"); */
+    background-color:white;
+}
+
+.calculator {
+    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 10px 10px 10px black;
+    width: 400px;
+    background-color: #fff;
 }
 
-button{
-    padding: 15px;
-    width: 80px;
-    font-size: 28px;
-    margin-left: 28px;
-    margin-top: 28px;
+.calculator-screen {
+    width: 100%;
+    height: 80px;
+    background-color: #252525;
+    color: #fff;
+    text-align: right;
+    padding: 20px;
+    font-size: 2.5rem;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    outline: none;
 }
-input{
-    padding: 30px;
-    margin-top: 7px;
-    width: 440px;
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+button {
+    height: 60px;
     border-radius: 5px;
-    margin-left: 10px;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    background-color: #e0e0e0;
+    cursor: pointer;
 }
 
-#res{
-    position: absolute;
-    top: 55px;
-    left: 470px;
+button.operator {
+    background-color: #f39c12;
+    color: white;
 }
 
-#usernum{
-    font-size: 30px;
+button.equal-sign {
+    background-color: #2ecc71;
+    color: white;
+    grid-column: span 4;
+}
+
+button.all-clear {
+    background-color: #e74c3c;
+    color: white;
+}
+
+button:active {
+    transform: scale(0.98);
 }
